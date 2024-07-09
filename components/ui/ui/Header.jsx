@@ -13,7 +13,9 @@ const Header = () => {
                 Julia<span className="text-accent">.</span>
             </h1>
             </Link>
+            <div className="hidden xl:flex">
             <Nav />
+            </div>
         </div>
     </header>
   )
