@@ -1,8 +1,9 @@
-import Link from "next/link"
-import { Button } from "./ui/button"
+import Link from "next/link";
+import { Button } from "./ui/button";
 
 // components
-import Nav from "./Nav"
+import Nav from "./Nav";
+import MobileNav from "./MobileNav";
 
 const Header = () => {
   return (
@@ -20,10 +21,12 @@ const Header = () => {
             </Link>
             </div>
 
-            <div className="xl:hidden">mobile nav</div>
+            <div className="xl:hidden">
+              <MobileNav />
+            </div>
         </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
