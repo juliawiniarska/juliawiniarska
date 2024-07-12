@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <Header />
         <StairsTransition />
         <PageTransition>{children}</PageTransition>
-        <footer className="items-center justify-center">
+        <footer>
           © 2024 Julia Winiarska. All rights reserved.
         </footer>
       </body>
