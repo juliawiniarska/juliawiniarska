@@ -69,7 +69,7 @@ const education = {
     },
     {
       institution: "I LO w Nysie im. Jana III Sobieskiego Carolinum",
-      degree: "Mathematics, Physics, and Computer science class",
+      degree: "Mathematics, Physics, and Computer Science class in Secondary School",
       duration: "2018 - 2021",
     },
   ],
