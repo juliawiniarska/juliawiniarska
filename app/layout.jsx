@@ -3,7 +3,6 @@ import "./globals.css";
 
 //components
 import Header from "@/components/Header";
-import StairsTransition from "@/components/StairsTransition";
 import PageTransition from "@/components/PageTransition";
 
 const jetBrains_Mono = JetBrains_Mono({ 
@@ -21,7 +20,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={jetBrains_Mono.variable}>
         <Header />
-        <StairsTransition />
         <PageTransition>{children}</PageTransition>
         <footer className="text-center py-4">
           © 2024 Julia Winiarska. All rights reserved.
