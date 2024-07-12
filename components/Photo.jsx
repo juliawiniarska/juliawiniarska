@@ -19,14 +19,14 @@ const Photo = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
           }}
-          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute"
+          className="w-[200px] h-[200px] xl:w-[400px] xl:h-[400px] mix-blend-lighten absolute"
         >
           <Image
             src="/assets/photo.png"
             priority
             quality={100}
-            layout="fill" // Set layout to fill container
-            objectFit="contain" // Ensure image fits within container
+            layout="fill" 
+            objectFit="contain" 
             alt=""
             className="rounded-full"
           />
