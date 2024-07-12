@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 
@@ -5,6 +6,20 @@ import Social from "@/components/Social";
 import Photo from "@/components/Photo";
 
 const Home = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleDownload = (language) => {
+    if (language === "English") {
+      window.location.href = "/assets/Julia_Winiarska_CV.pdf";
+    } else if (language === "Polish") {
+      window.location.href = "/assets/Winiarska_Julia_CV.pdf";
+    }
+  };
+
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
@@ -18,14 +33,33 @@ const Home = () => {
               I am a third-year computer science student specializing in Web Systems. I excel at crafting elegant digital experiences and am proficient in various programming languages and technologies.
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
-            <Button
-                variant="outline"
-                size="lg"
-                className="uppercase flex items-center gap-2"
-              >
-                <span>Download CV</span>
-                <FiDownload className="text-xl" />
-              </Button>
+              <div className="relative">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="uppercase flex items-center gap-2"
+                  onClick={toggleDropdown}
+                >
+                  <span>Download CV</span>
+                  <FiDownload className="text-xl" />
+                </Button>
+                {isDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-full bg-white border border-gray-300 rounded shadow-lg">
+                    <button
+                      onClick={() => handleDownload("English")}
+                      className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200"
+                    >
+                      English
+                    </button>
+                    <button
+                      onClick={() => handleDownload("Polish")}
+                      className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200"
+                    >
+                      Polish
+                    </button>
+                  </div>
+                )}
+              </div>
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"
