@@ -124,7 +124,7 @@ const Contact = () => {
                 exit={{ opacity: 0 }}
                 className="fixed top-4 right-4 bg-green-500 text-white p-4 rounded-md"
               >
-                Thank you for message
+                Message sent successfully
               </motion.div>
             )}
           </div>
