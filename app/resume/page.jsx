@@ -168,7 +168,7 @@ const Resume = () => {
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
                 <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[45px]">
                     {experience.items.map((item, index) => {
                       return (
                         <li
