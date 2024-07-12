@@ -8,7 +8,7 @@ import PageTransition from "@/components/PageTransition";
 
 const jetBrains_Mono = JetBrains_Mono({ subsets: ["latin"], 
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-  variable: '--font-jetbrainsMono'
+  variable: '--font-jetbrainsMono',
 });
 
 export const metadata = {
