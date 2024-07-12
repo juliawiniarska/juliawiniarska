@@ -13,7 +13,6 @@ const Photo = () => {
           transition: { delay: 2, duration: 0.4, ease: "easeIn" },
         }}
       >
-        {/* image */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
@@ -26,13 +25,13 @@ const Photo = () => {
             src="/assets/photo.png"
             priority
             quality={100}
-            fill
+            layout="fill" // Set layout to fill container
+            objectFit="contain" // Ensure image fits within container
             alt=""
-            className="object-contain"
+            className="rounded-full"
           />
         </motion.div>
 
-        {/* circle */}
         <motion.svg
           className="w-[300px] xl:w-[506px] h-[300px] xl:h-[506px]"
           fill="transparent"
