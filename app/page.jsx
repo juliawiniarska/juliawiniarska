@@ -1,194 +1,48 @@
-"use client"
+import { Button } from "@/components/ui/button"
+import { FiDownload } from "react-icons/fi";
 
-import { motion } from "framer-motion";
-import React, { useState } from 'react';
+import Social from "@/components/Social";
+import Photo from "@/components/Photo";
+import Stats from "@/components/Stats";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-
-import { BsArrowUpRight, BsGithub } from "react-icons/bs";
-
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-
-import Link from "next/link";
-import Image from "next/image";
-import WorkSliderBtns from "@/components/WorkSliderBtns";
-
-const projects = [
-  {
-  num: "01",
-  category: "fullstack",
-  title: "Online Store",
-  description:
-  "This project is an MERN stack online store with Redux Toolkit. It involves server setup, MongoDB integration, and UI design featuring a shopping cart, product reviews, carousel, pagination, search, user profiles, and admin management.",
-  stack: [
-    {
-      category: "Front-end",
-      technologies: [
-        { name: "React" },
-        { name: "Redux" }
-      ]
-    },
-    {
-      category: "Back-end",
-      technologies: [
-        { name: "Express" },
-        { name: "JWT Authentication"}
-      ]
-    },
-    {
-      category: "Database",
-      technologies: [
-        { name: "MongoDB" }
-      ]
-    }
-  ],
-  image: "/assets/work/thumb1.png",
-  live: "",
-  github: "https://github.com/juliawiniarska/shop-project",
-  },
-  {
-    num: "02",
-    category: "fullstack",
-    title: "Educational Quiz Management Application",
-    description:
-    "An educational quiz management application developed using Laravel and Vue.js. It allows teachers to create and manage classes, tests, questions, and users, as well as view student results. Students can take assigned tests, check their results, and review their test history.",
-    stack: [
-      { 
-        category: "Front-end",
-        technologies: [
-          { name: "Vue.js" },
-          { name: "Tailwind CSS" },
-          { name: "Bootstrap" }
-        ]
-      },
-      { 
-        category: "Back-end",
-        technologies: [
-          { name: "Laravel" },
-          { name: "PHP" }
-        ]
-      },
-      { 
-        category: "Database",
-        technologies: [
-          { name: "MySQL" }
-        ]
-      },
-      { 
-        category: "Authentication",
-        technologies: [
-          { name: "Laravel Jetstream" }
-        ]
-      }
-    ],
-    image: "/assets/work/thumb1.png",
-    live: "",
-    github: "https://github.com/juliawiniarska/quiz-web",
-    },
-];
-
-const Work = () => {
-  const [project, setProject] = useState(projects[0]);
-
-  const handleSlideChange = (swiper) => {
-    const currentIndex = swiper.activeIndex;
-    setProject(projects[currentIndex]);
-  };
-
+const Home = () => {
   return (
-    <motion.section
-    initial={{opacity: 0}}
-    animate={{
-      opacity: 1,
-      transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
-    }}
-    classname="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
-    >
-      <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[30px] h-[50%]">
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
-                {project.num}
-              </div>
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
-              </h2>
-              <p className="text-white/60">{project.description}</p>
-              <ul className="flex gap-4">
-                {project.stack.map((item, index) => {
-                  return (
-                    <li key={index} className="text-xl text-accent">
-                      {item.name}
-                      {index !== project.stack.length - 1 && ","}
-                    </li>
-                  );
-                })}
-              </ul>
-              <div className="border border-white/20"></div>
-              <div className="flex items-center gap-4">
-                <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Github repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+    <section className="h-full">
+      <div className="container mx-auto h-full">
+        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+          <div className="text-center xl:text-left order-2 xl:order-none">
+            <span className="text-xl">Software Develper</span>
+            <h1 className="h1 mb-6">
+              Hello, I'm <br /> <span className="text-accent">Julia Winiarska</span>
+            </h1>
+            <p className="max-w-[500px] mb-9 text-white/80">
+            some texts
+            </p>
+            <div className="flex flex-col xl:flex-row items-center gap-8">
+              <Button
+              variant="outline"
+              size='lg'
+              className="uppercase flex items-center gap-2"
+              >
+                <span>Download CV</span>
+                <FiDownload className="text-xl" />
+              </Button>
+              <div className="mb-8 xl:mb-0">
+                <Social
+                containerStyles="flex gap-6"
+                iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
+                />
               </div>
             </div>
           </div>
-          <div className="w-full xl:w-[50%]">
-            <Swiper
-              spaceBetween={30}
-              slidesPerView={1}
-              className="xl:h-[520px] mb-12"
-              onSlideChange={handleSlideChange}
-            >
-              {projects.map((project, index) => {
-                return (
-                  <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                      <div className="relative w-full h-full">
-                        <Image
-                          src={project.image}
-                          fill
-                          className="object-cover"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-              <WorkSliderBtns
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
-              />
-            </Swiper>
+          <div className="order-1 xl:order-none mb-8 xl:mb-0">
+            <Photo />
           </div>
         </div>
       </div>
-    </motion.section>
-  )
+      <Stats />
+    </section>
+  );
 };
 
-export default Work;
+export default Home;
