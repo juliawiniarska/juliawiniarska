@@ -191,6 +191,4 @@ const Work = () => {
   )
 };
 
-export default function Home() {
-  return <main>homepage</main>;
-}
+export default Work;
