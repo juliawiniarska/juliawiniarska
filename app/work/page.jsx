@@ -105,12 +105,9 @@ const Work = () => {
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
-            <div className="text-8xl leading-none font-extrabold">
-  <span className="border-2 border-white rounded-full px-4 py-2">
-    <span className="text-transparent text-outline">{project.num}</span>
-  </span>
-</div>
-
+            <div className="text-8xl leading-none font-extrabold text-white text-outline">
+            {project.num}
+              </div>
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
                 {project.category} project
               </h2>
