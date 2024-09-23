@@ -47,8 +47,8 @@ const experience = {
   items: [
     {
       company: "4soft Software House - Web and Blockchain Applications",
-      position: "Student Internship - Web Developer",
-      duration: "Summer 2023",
+      position: "Internship - Junior React Developer",
+      duration: "June 2023 - June 2024",
     },
     {
       company: "Państwowa Akademia Nauk Stosowanych w Nysie",
