@@ -16,7 +16,7 @@ const Home = () => {
 
   const handleDownload = (language) => {
     if (language === "English") {
-      window.location.href = "/assets/Julia_Winiarska_CV.pdf";
+      window.location.href = "/assets/Julia Winiarska.pdf";
     } else if (language === "Polish") {
       window.location.href = "/assets/Winiarska_Julia_CV.pdf";
     }
@@ -32,7 +32,7 @@ const Home = () => {
               Hello, I&apos;m <br /> <span className="text-accent">Julia Winiarska</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I am a third-year computer science student specializing in Web Systems. I excel at crafting elegant digital experiences and am proficient in various programming languages and technologies.
+              I am a a computer science student in my final semester, specializing in Web Systems. I excel at crafting elegant digital experiences and am proficient in various programming languages and technologies.
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <div className="relative">
@@ -53,12 +53,12 @@ const Home = () => {
                     >
                       English
                     </button>
-                    <button
+                    {/* <button
                       onClick={() => handleDownload("Polish")}
                       className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200"
                     >
                       Polish
-                    </button>
+                    </button> */}
                   </div>
                 )}
               </div>

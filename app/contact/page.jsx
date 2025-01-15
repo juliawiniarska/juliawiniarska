@@ -17,7 +17,7 @@ const info = [
   {
     icon: <FaEnvelope />,
     title: "Email",
-    description: "julciagim@gmail.com",
+    description: "juliaaw.business@gmail.com",
   },
   {
     icon: <FaMapMarkerAlt />,
@@ -44,7 +44,7 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs.send('service_0pegj0c', 'template_gdprcsi', {
-      to_name: "Julciagim",
+      to_name: "Julia",
       from_name: `${formData.firstname} ${formData.lastname}`,
       firstname: formData.firstname,
       lastname: formData.lastname,
