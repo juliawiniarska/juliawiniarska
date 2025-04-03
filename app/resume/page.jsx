@@ -52,10 +52,6 @@ const about = {
       fieldName: "Experience",
       fieldValue: "2+ Years",
     },
-    // {
-    //   fieldName: "Nationality",
-    //   fieldValue: "Polish",
-    // },
     {
       fieldName: "Email",
       fieldValue: "juliaaw.business@gmail.com",
