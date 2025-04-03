@@ -7,7 +7,10 @@ import {
   FaReact,
   FaFigma,
   FaNodeJs,
+  FaPython,
+  FaJava,
 } from "react-icons/fa";
+
 import {
   SiTailwindcss,
   SiNextdotjs,
@@ -15,9 +18,14 @@ import {
   SiMongodb,
   SiLaravel,
   SiPhp,
+  SiMysql,
+  SiPostgresql,
+  SiDocker,
+  SiAmazonaws,
+  SiGooglecloud,
+  SiWireshark,
 } from "react-icons/si";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Tooltip,
   TooltipContent,
@@ -25,8 +33,10 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 
+// -- DANE O AUTORZE
 const about = {
   title: "About me",
   info: [
@@ -57,6 +67,7 @@ const about = {
   ],
 };
 
+// -- DOŚWIADCZENIE
 const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
@@ -74,90 +85,86 @@ const experience = {
   ],
 };
 
+// -- EDUKACJA
 const education = {
   icon: "/assets/resume/cap.svg",
   title: "My education",
   items: [
     {
       institution: "University of Applied Sciences in Nysa",
-      degree: "Computer science - Web Systems",
+      degree: "Computer Science - Web Systems",
       duration: "2021 - 2025",
     },
     {
       institution: "I LO w Nysie im. Jana III Sobieskiego Carolinum",
-      degree: "Mathematics, Physics, and Computer Science class in Secondary School",
+      degree: "Mathematics, Physics, and Computer Science class",
       duration: "2018 - 2021",
     },
   ],
 };
 
+// -- OGÓLNE SKILLE (z ikonami)
 const skills = {
   title: "My skills",
   skillList: [
-    {
-      icon: <FaHtml5 />,
-      name: "html 5",
-    },
-    {
-      icon: <FaCss3 />,
-      name: "css 3",
-    },
-    {
-      icon: <FaJs />,
-      name: "javascript",
-    },
-    {
-      icon: <FaReact />,
-      name: "react.js",
-    },
-    {
-      icon: <SiNextdotjs />,
-      name: "next.js",
-    },
-    {
-      icon: <SiTailwindcss />,
-      name: "tailwind.css",
-    },
-    {
-      icon: <FaNodeJs />,
-      name: "node.js",
-    },
-    {
-      icon: <FaFigma />,
-      name: "figma",
-    },
-    {
-      icon: <SiExpress />,
-      name: "express.js",
-    },
-    {
-      icon: <SiMongodb />,
-      name: "mongoDB",
-    },
-    {
-      icon: <SiLaravel />,
-      name: "laravel",
-    },
-    {
-      icon: <SiPhp />,
-      name: "php",
-    },
+    // Języki
+    { icon: <FaPython />, name: "Python" },
+    { icon: <FaJava />, name: "Java" },
+    { icon: <FaJs />, name: "JavaScript" },
+    { icon: <SiPhp />, name: "PHP 8" },
+    // Frameworki
+    { icon: <FaNodeJs />, name: "Node.js (Express)" },
+    { icon: <SiLaravel />, name: "Laravel" },
+    { icon: <FaReact />, name: "React" },
+    { icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" className="w-8 h-8" alt="Vue.js" />, name: "Vue.js" },
+    // Bazy
+    { icon: <SiMysql />, name: "MySQL" },
+    { icon: <SiMongodb />, name: "MongoDB" },
+    { icon: <SiPostgresql />, name: "PostgreSQL" },
+    // Cloud & DevOps
+    { icon: <SiAmazonaws />, name: "AWS (Basic)" },
+    { icon: <SiGooglecloud />, name: "GCP (Basic)" },
+    { icon: <SiDocker />, name: "Docker (Basic)" },
+    { icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" className="w-8 h-8" alt="Git" />, name: "Git" },
   ],
 };
 
-// DODANA SEKCJA Z DODATKOWYMI UMIEJĘTNOŚCIAMI
-const cybersecuritySkills = [
-  "Network & System Fundamentals: Basic Linux administration, Docker (containers), configuring network traffic analysis",
-  "Offensive Security Basics: TryHackMe practice (Pre-Security, Complete Beginner) — focusing on penetration testing labs, vulnerabilities, and exploit fundamentals",
-  "Preparing for CompTIA Security+: Studying network security, threats, vulnerabilities, and best practices",
-  "Secure Development: Familiar with authentication, session management, and data sanitization across web applications",
-  "Programming & Scripting: Proficient in Python (automation scripts, network scanning), experience with JavaScript, and essential Bash/C for security tool usage",
-  "Languages: Python, JavaScript, PHP 8, Java, SQL",
-  "Frameworks: Node.js (Express), Laravel, React, Vue.js",
-  "Databases: MySQL, MongoDB, PostgreSQL",
-  "Cloud & DevOps (Basic): AWS, GCP, Docker, Git",
-  "Security Tools: Scapy, Wireshark, basic experience with Nmap, Burp Suite, and SIEM concepts",
-];
+// -- CYBERSECURITY SKILLS (w kafelkach)
+const cybersecuritySkills = {
+  title: "Cybersecurity Skills",
+  skillList: [
+    {
+      title: "Network & System Fundamentals",
+      description:
+        "Basic Linux administration, Docker (containers), configuring network traffic analysis",
+    },
+    {
+      title: "Offensive Security Basics",
+      description:
+        "TryHackMe labs (Pre-Security, Complete Beginner) — pentesting fundamentals, vulnerabilities, exploits",
+    },
+    {
+      title: "CompTIA Security+ Prep",
+      description:
+        "Studying network security, threats, vulnerabilities, and best practices",
+    },
+    {
+      title: "Secure Development",
+      description:
+        "Authentication, session management, data sanitization in web applications",
+    },
+    {
+      title: "Programming & Scripting",
+      description:
+        "Proficient in Python (automation scripts, network scanning), JavaScript, essential Bash/C",
+    },
+    {
+      title: "Security Tools",
+      description:
+        "Scapy, Wireshark, Nmap, Burp Suite, and SIEM basics",
+    },
+  ],
+};
 
 const Resume = () => {
   return (
@@ -174,14 +181,18 @@ const Resume = () => {
           defaultValue="experience"
           className="flex flex-col xl:flex-row gap-[60px]"
         >
+          {/* ---- LEWE MENU (LISTA ZAKŁADEK) ---- */}
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
+            <TabsTrigger value="cybersecurity">Cybersecurity Skills</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
           </TabsList>
 
+          {/* ---- PRAWA STRONA (ZAWARTOŚĆ ZAKŁADEK) ---- */}
           <div className="min-h-[70vh] w-full">
+            {/* EXPERIENCE */}
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
@@ -209,6 +220,7 @@ const Resume = () => {
               </div>
             </TabsContent>
 
+            {/* EDUCATION */}
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{education.title}</h3>
@@ -236,22 +248,25 @@ const Resume = () => {
               </div>
             </TabsContent>
 
+            {/* SKILLS */}
             <TabsContent value="skills" className="w-full h-full">
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{skills.title}</h3>
                 </div>
-                {/* Sekcja ikon */}
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
                   {skills.skillList.map((skill, index) => {
                     return (
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex flex-col justify-center items-center group p-4">
                               <div className="text-6xl group-hover:text-accent transition-all duration-300">
                                 {skill.icon}
                               </div>
+                              <p className="mt-2 text-sm capitalize text-white/80">
+                                {skill.name}
+                              </p>
                             </TooltipTrigger>
                             <TooltipContent>
                               <p className="capitalize">{skill.name}</p>
@@ -262,25 +277,37 @@ const Resume = () => {
                     );
                   })}
                 </ul>
-
-                {/* Dodatkowe umiejętności z CV */}
-                <div className="mt-8">
-                  <h4 className="text-2xl font-bold mb-4">
-                    Cybersecurity & Additional Skills
-                  </h4>
-                  <ul className="list-disc list-inside space-y-2">
-                    {cybersecuritySkills.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             </TabsContent>
 
-            <TabsContent
-              value="about"
-              className="w-full text-center xl:text-left"
-            >
+            {/* CYBERSECURITY SKILLS */}
+            <TabsContent value="cybersecurity" className="w-full h-full">
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">
+                  {cybersecuritySkills.title}
+                </h3>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px]">
+                    {cybersecuritySkills.skillList.map((skill, index) => (
+                      <li
+                        key={index}
+                        className="bg-[#232329] min-h-[150px] py-6 px-4 rounded-xl flex flex-col justify-center items-center md:items-start gap-2"
+                      >
+                        <h4 className="text-xl font-semibold text-accent text-center md:text-left">
+                          {skill.title}
+                        </h4>
+                        <p className="text-white/80 text-sm text-center md:text-left">
+                          {skill.description}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </ScrollArea>
+              </div>
+            </TabsContent>
+
+            {/* ABOUT ME */}
+            <TabsContent value="about" className="w-full text-center xl:text-left">
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
