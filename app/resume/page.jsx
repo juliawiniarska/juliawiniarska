@@ -8,8 +8,24 @@ import {
   FaFigma,
   FaNodeJs,
 } from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiExpress,
+  SiMongodb,
+  SiLaravel,
+  SiPhp,
+} from "react-icons/si";
 
-import { SiTailwindcss, SiNextdotjs, SiExpress, SiMongodb, SiLaravel, SiPhp } from "react-icons/si";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { motion } from "framer-motion";
 
 const about = {
   title: "About me",
@@ -51,7 +67,7 @@ const experience = {
       duration: "June 2023 - June 2024",
     },
     {
-      company: "Państwowa Akademia Nauk Stosowanych w Nysie",
+      company: "University of Applied Sciences in Nysa",
       position: "Computer Science Student",
       duration: "2021 - present",
     },
@@ -63,9 +79,9 @@ const education = {
   title: "My education",
   items: [
     {
-      institution: "Państwowa Akademia Nauk Stosowanych w Nysie",
+      institution: "University of Applied Sciences in Nysa",
       degree: "Computer science - Web Systems",
-      duration: "2021 - present",
+      duration: "2021 - 2025",
     },
     {
       institution: "I LO w Nysie im. Jana III Sobieskiego Carolinum",
@@ -111,35 +127,37 @@ const skills = {
       name: "figma",
     },
     {
-        icon: <SiExpress />,
-        name: "express.js",
-      },
-      {
-        icon: <SiMongodb />,
-        name: "mongoDB",
-      },
-      {
-        icon: <SiLaravel />,
-        name: "laravel",
-      },
-      {
-        icon: <SiPhp />,
-        name: "php",
-      },
+      icon: <SiExpress />,
+      name: "express.js",
+    },
+    {
+      icon: <SiMongodb />,
+      name: "mongoDB",
+    },
+    {
+      icon: <SiLaravel />,
+      name: "laravel",
+    },
+    {
+      icon: <SiPhp />,
+      name: "php",
+    },
   ],
 };
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { motion } from "framer-motion";
+// DODANA SEKCJA Z DODATKOWYMI UMIEJĘTNOŚCIAMI
+const cybersecuritySkills = [
+  "Network & System Fundamentals: Basic Linux administration, Docker (containers), configuring network traffic analysis",
+  "Offensive Security Basics: TryHackMe practice (Pre-Security, Complete Beginner) — focusing on penetration testing labs, vulnerabilities, and exploit fundamentals",
+  "Preparing for CompTIA Security+: Studying network security, threats, vulnerabilities, and best practices",
+  "Secure Development: Familiar with authentication, session management, and data sanitization across web applications",
+  "Programming & Scripting: Proficient in Python (automation scripts, network scanning), experience with JavaScript, and essential Bash/C for security tool usage",
+  "Languages: Python, JavaScript, PHP 8, Java, SQL",
+  "Frameworks: Node.js (Express), Laravel, React, Vue.js",
+  "Databases: MySQL, MongoDB, PostgreSQL",
+  "Cloud & DevOps (Basic): AWS, GCP, Docker, Git",
+  "Security Tools: Scapy, Wireshark, basic experience with Nmap, Burp Suite, and SIEM concepts",
+];
 
 const Resume = () => {
   return (
@@ -223,6 +241,7 @@ const Resume = () => {
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{skills.title}</h3>
                 </div>
+                {/* Sekcja ikon */}
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
                   {skills.skillList.map((skill, index) => {
                     return (
@@ -243,6 +262,18 @@ const Resume = () => {
                     );
                   })}
                 </ul>
+
+                {/* Dodatkowe umiejętności z CV */}
+                <div className="mt-8">
+                  <h4 className="text-2xl font-bold mb-4">
+                    Cybersecurity & Additional Skills
+                  </h4>
+                  <ul className="list-disc list-inside space-y-2">
+                    {cybersecuritySkills.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </TabsContent>
 
