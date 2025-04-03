@@ -1,7 +1,5 @@
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-
-//components
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 
@@ -22,7 +20,7 @@ export default function RootLayout({ children }) {
         <Header />
         <PageTransition>{children}</PageTransition>
         <footer className="text-center py-4">
-          © 2024 Julia Winiarska. All rights reserved.
+          © 2025 Julia Winiarska. All rights reserved.
         </footer>
       </body>
     </html>

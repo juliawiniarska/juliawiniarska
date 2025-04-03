@@ -1,9 +1,7 @@
 "use client";
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
-
 import Social from "@/components/Social";
 import Photo from "@/components/Photo";
 
@@ -16,7 +14,7 @@ const Home = () => {
 
   const handleDownload = (language) => {
     if (language === "English") {
-      window.location.href = "/assets/Julia Winiarska.pdf";
+      window.location.href = "/assets/CV Julia Winiarska.pdf";
     } else if (language === "Polish") {
       window.location.href = "/assets/Winiarska_Julia_CV.pdf";
     }
@@ -27,12 +25,12 @@ const Home = () => {
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Software Developer</span>
+            <span className="text-xl">Junior Security Analyst</span>
             <h1 className="h1 mb-6">
-              Hello, I&apos;m <br /> <span className="text-accent">Julia Winiarska</span>
+              Hi, I&apos;m <br /> <span className="text-accent">Julia Winiarska</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I am a a computer science student in my final semester, specializing in Web Systems. I excel at crafting elegant digital experiences and am proficient in various programming languages and technologies.
+            Motivated Computer Science graduate transitioning into Cybersecurity. Currently sharpening my skills on TryHackMe by following the "Security Analyst" track and preparing for the CompTIA Security+ certification. I combine a solid full-stack background with a growing focus on network and application security to develop secure, elegant digital solutions.
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <div className="relative">
