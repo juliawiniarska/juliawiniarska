@@ -30,7 +30,7 @@ const Home = () => {
               Hi, I&apos;m <br /> <span className="text-accent">Julia Winiarska</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-            Motivated Computer Science graduate transitioning into Cybersecurity. Currently sharpening my skills on TryHackMe by following the "Security Analyst" track and preparing for the CompTIA Security+ certification. I combine a solid full-stack background with a growing focus on network and application security to develop secure, elegant digital solutions.
+            Motivated Computer Science graduate transitioning into Cybersecurity. Currently sharpening my skills on TryHackMe by following the Security Analyst track and preparing for the CompTIA Security+ certification. I combine a solid full-stack background with a growing focus on network and application security to develop secure, elegant digital solutions.
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <div className="relative">
